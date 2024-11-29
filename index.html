@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WrestlingDream</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles pour le message d'erreur */
+        .error-message {
+            display: none;
+            /* Cacher le message par défaut */
+            background-color: #ff0000;
+            /* Fond rouge */
+            color: #ffffff;
+            /* Texte blanc */
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 100px;
+            font-weight: bold;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        /* Style général */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        header {
+            background-color: #1a1a1a;
+            padding: 20px 0;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 3em;
+            color: #ff0000;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            background-color: #ff0000;
+            border-radius: 5px;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #000;
+        }
+
+        /* Conteneur du carrousel */
+        .carousel-container {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            position: relative;
+            border: 2px solid #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .carousel img {
+            position: absolute;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            z-index: 1;
+        }
+
+        @keyframes fade {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            33% {
+                opacity: 0;
+            }
+        }
+
+        .carousel img:nth-child(1) {
+            animation: fade 6s infinite;
+        }
+
+        .carousel img:nth-child(2) {
+            animation: fade 6s infinite 2s;
+        }
+
+        .carousel img:nth-child(3) {
+            animation: fade 6s infinite 4s;
+        }
+
+        /* Bouton Se connecter centré */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        .login-button {
+            background-color: #ff0000;
+            color: white;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .login-button:hover {
+            background-color: #000;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Section des images sous le bouton */
+        .image-section {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .image-section img {
+            max-width: 30%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .image-section img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Contenu */
+        .content h3 {
+            font-size: 8em;
+            color: #ff0000;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        section.content {
+            padding: 20px;
+        }
+
+        /* Appel à l'action */
+        .call-to-action img {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        footer {
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .socials img {
+            width: 30px;
+            margin: 0 10px;
+            transition: transform 0.3s;
+        }
+
+        .socials img:hover {
+            transform: scale(1.1);
+        }
+
+        body,
+        p {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>WrestlingDream</h1>
+    </header>
+
+    <main>
+        <!-- Section d'introduction avec carrousel -->
+        <section class="intro">
+            <h2>Bienvenue à WrestlingDream!</h2>
+            <p>Que tu sois ordinaire ou un intime du plus obscur globe, la vie extraordinaire s’avance là où
+                l’imaginaire le veut et où la force impose sa réalité.</p>
+
+            <!-- Formulaire pour l'email -->
+            <div class="form-container">
+                <form id="loginForm">
+                    <input type="email" id="email" placeholder="Entrez votre email" required>
+                    <button type="submit" class="login-button">Se connecter</button>
+                </form>
+                <!-- Message d'erreur -->
+                <div id="errorMessage" class="error-message">
+                    Veuillez entrer un email valide ou enregistré.
+                </div>
+            </div>
+
+            <!-- Section des images sous le bouton -->
+            <section class="image-section">
+                <img src="wrestlemania.png" alt="Wrestlemania 39">
+                <img src="WWEBACKLASH.jpg" alt="Arène de Backlash France">
+                <img src="arene AEW.jpg" alt="Arène AEW">
+            </section>
+
+            <!-- Contenu principal -->
+            <section class="content">
+                <h3>Le Catch : Théâtre vivant</h3>
+                <p>Le catch, théâtre vivant sous la loi du plus fort dominé, est un sport de spectacle qui allie talent
+                    physique, charisme et passion. Des histoires légendaires sont racontées dans ce ring sacré.</p>
+                <p>As-tu ce qu’il faut pour affronter les plus grands champions? Viens découvrir notre monde.</p>
+            </section>
+
+            <!-- Appel à l'action -->
+            <section class="call-to-action">
+                <h3>ARE YOU READY?</h3>
+                <p>Joins-nous pour découvrir les dernières actualités, biographies de superstars, matchs mémorables et
+                    plus encore.</p>
+                <img src="wrestler.jpg" alt="Wrestler ready">
+            </section>
+    </main>
+
+    <footer>
+        <p>Copyright © WrestlingDream</p>
+        <div class="socials">
+            <a href="https://www.instagram.com/wrestlingdream2025/"><img src="instagram.png" alt="Instagram"></a>
+            <a href="https://www.facebook.com"><img src="facebook.png" alt="Facebook"></a>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript pour gérer la soumission du formulaire
+        document.getElementById("loginForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Empêche l'envoi du formulaire
+
+            // Récupère l'email entré
+            var email = document.getElementById("email").value;
+            var errorMessage = document.getElementById("errorMessage");
+
+            // Expression régulière pour valider l'email
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            // Réinitialise le message d'erreur
+            errorMessage.style.display = "none";
+
+            // Vérifie si l'email est valide
+            if (emailRegex.test(email)) {
+                // Envoyer la demande à verification.php via AJAX
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "verification.php", true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        // Réponse du serveur
+                        if (xhr.responseText === "success") {
+                            // Si l'email est valide, redirige vers une autre page
+                            window.location.href = "histoire.html";
+                        } else {
+                            // Si l'email n'est pas dans la base de données
+                            errorMessage.textContent = "Cet email n'est pas enregistré.";
+                            errorMessage.style.display = "block";
+                        }
+                    }
+                };
+
+                // Envoyer les données
+                xhr.send("email=" + encodeURIComponent(email));
+            } else {
+                // Si l'email n'est pas valide
+                errorMessage.textContent = "Veuillez entrer un email valide.";
+                errorMessage.style.display = "block";
+            }
+        });
+    </script>
+</body>
+
+</html>
