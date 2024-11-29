@@ -1,0 +1,190 @@
+/* Réinitialisation des marges et styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style général du corps */
+body {
+    size: 5em;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: white;
+    line-height: 1.6;
+}
+
+/* Style de l'en-tête */
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 20px 0;
+}
+
+/* Style du conteneur de la navigation */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Espacement entre le bouton retour et les liens */
+    padding: 10px 20px;
+    background-color: #f00;
+}
+
+/* Style pour l'image "Retour" */
+.btn-retour {
+    width: 40px;
+    /* Ajuste la taille de l'image */
+    cursor: pointer;
+}
+
+/* Style de la liste de navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    /* Aligne la liste de liens à droite */
+}
+
+/* Espacement entre les éléments de la liste */
+nav ul li {
+    margin-left: 30px;
+}
+
+/* Style des liens */
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+/* Changement de couleur au survol */
+nav ul li a:hover {
+    color: black;
+}
+
+
+
+h1 {
+    margin-top: 10px;
+    font-size: 2.5em;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+h2 {
+    color: #ff0000;
+    text-align: center;
+}
+
+.history-section {
+    text-align: center;
+}
+
+.history-image {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: block;
+}
+
+.legends-section {
+    text-align: center;
+}
+
+.legend {
+    display: inline-block;
+    margin: 20px;
+    text-align: center;
+}
+
+.legend img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+.legend img:hover {
+    transform: scale(1.1);
+}
+
+.legend h3 {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #ff0000;
+}
+
+
+.modern-section {
+    text-align: center;
+}
+
+.modern-image {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+footer {
+    text-align: center;
+    background-color: #333;
+    padding: 10px;
+}
+
+.socials img {
+    width: 50px;
+    margin: 20 25px;
+    justify-content: space-around;
+
+}
+
+nav ul li a:hover {
+    color: black;
+}
+
+button {
+    background-color: red;
+    /* Couleur de fond */
+    color: white;
+    /* Couleur du texte */
+    padding: 10px 20px;
+    /* Espace interne */
+    text-align: center;
+    /* Alignement du texte */
+    font-size: 16px;
+    /* Taille de la police */
+    border: none;
+    /* Suppression des bordures */
+    border-radius: 5px;
+    /* Coins arrondis */
+    cursor: pointer;
+    /* Curseur lors du survol */
+}
+
+button:hover {
+    background-color: red
+        /* Couleur lors du survol */
+}
+
+body {
+    font-size: 18px;
+    /* Augmente la taille de la police par défaut */
+    line-height: 1.6;
+    /* Assure un espacement suffisant entre les lignes */
+}
+
+
+p {
+    font-size: 1.2em;
+    /* Rend le texte des paragraphes plus grand */
+    line-height: 1.8;
+    /* Augmente l'espacement entre les lignes pour une lecture plus facile */
+}

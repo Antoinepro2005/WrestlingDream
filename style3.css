@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: #f00;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.btn-retour {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-retour:hover {
+    background-color: #b30000;
+}
+
+.superstar {
+    display: inline-block;
+    margin: 60px;
+    padding: 50px;
+    border: 10px solid #000;
+    background-color: red;
+}
+
+.superstar img {
+    width: 800px;
+    height: 500px;
+}
+
+button {
+    display: block;
+    margin-top: 10px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+.description {
+    font-size: 14px;
+    margin-top: 10px;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    color: black;
+}
+
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin-top: auto;
+}
+
+.socials img {
+    width: 30px;
+    margin: 0 10px;
+}
