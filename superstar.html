@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WWE Superstars</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <button onclick="location.href='index.html';" class="btn-retour">Retour à la page d'accueil</button>
+            <ul>
+                <li><a href="histoire.html">Histoire</a></li>
+                <li><a href="superstar.html">Superstars</a></li>
+                <li><a href="titres.html">Titres</a></li>
+                <li><a href="federation.html">Fédération</a></li>
+            </ul>
+        </nav>
+    </header>
+    <p>Le catch, également connu sous le nom de lutte professionnelle, est un sport spectaculaire et divertissant qui
+        met en vedette des athlètes exceptionnels, connus sous le nom de superstars. Ces superstars, avec leurs
+        personnages uniques et leurs compétences sur le ring, captivent l'imagination des fans à travers le monde. Dans
+        cet parite, nous allons explorer quelques-unes des superstars les plus emblématiques du catch et brièvement
+        discuter de leur histoire et de leur impact sur le monde du catch Depuis ses débuts modestes sur les scènes
+        locales jusqu'à son ascension fulgurante sur la scène mondiale, le catch professionnel a vu naître des
+        superstars qui ont transcendé les frontières du sport pour devenir de véritables icônes de la culture populaire.
+        Ces superstars, avec leur charisme indéniable, leur talent sur le ring et leur capacité à captiver les foules,
+        ont façonné l'histoire du catch et ont laissé une empreinte indélébile sur le divertissement sportif.
+        Dans cette exploration des superstars du catch, nous plongerons dans les histoires fascinantes de certaines des
+        figures les plus emblématiques de ce sport. Nous examinerons leurs origines, leurs réalisations sur le ring,
+        leurs rivalités mémorables, ainsi que leur impact tant dans le cadre du kayfabe que dans la réalité. Des
+        pionniers visionnaires aux légendes modernes, ces superstars ont non seulement défini l'essence même du catch,
+        mais ont également inspiré des générations de fans à travers le monde. Rejoignez-nous dans ce voyage à travers
+        les époques et les personnages qui ont marqué à jamais l'histoire du catch.</p>
+    <div id="superstars-container"></div>
+
+    <script>
+        const superstars = [
+            {
+                prénoms: "Stone Cold",
+                noms: "Steve Austin",
+                date_naissance: "18/12/1964",
+                taille: 188,
+                poids: 114,
+                nationalité: "Américain",
+                description: "Steve Austin, surnommé 'Stone Cold', est l'un des catcheurs les plus influents de l'histoire de la WWE. Il a marqué l'ère Attitude avec son personnage de rebelle et ses combats mémorables contre Vince McMahon."
+            },
+            {
+                prénoms: "The",
+                noms: "Rock",
+                date_naissance: "02/05/1972",
+                taille: 196,
+                poids: 118,
+                nationalité: "Américain",
+                description: "Dwayne 'The Rock' Johnson est une icône mondiale. Son charisme, ses talents au micro et ses performances sur le ring l'ont élevé au rang de l'une des plus grandes stars de la WWE."
+            },
+            {
+                prénoms: "The",
+                noms: "Undertaker",
+                date_naissance: "24/03/1965",
+                taille: 208,
+                poids: 138,
+                nationalité: "Américain",
+                description: "The Undertaker a régné sur la WWE avec son personnage mythique du 'Deadman'. Sa série de victoires à WrestleMania et son aura mystérieuse en font une légende vivante."
+            },
+            {
+                prénoms: "Shawn",
+                noms: "Michaels",
+                date_naissance: "22/07/1965",
+                taille: 185,
+                poids: 102,
+                nationalité: "Américain",
+                description: "Shawn Michaels, alias 'The Heartbreak Kid', est souvent considéré comme le meilleur catcheur technique de tous les temps. Ses matchs légendaires à WrestleMania et son style unique ont marqué des générations."
+            },
+            {
+                prénoms: "Randy",
+                noms: "Orton",
+                date_naissance: "01/04/1980",
+                taille: 196,
+                poids: 113,
+                nationalité: "Américain",
+                description: "Randy Orton, surnommé 'The Viper', est connu pour son RKO imprévisible et son intensité sur le ring. Il est l'un des catcheurs les plus constants et respectés de la WWE."
+            },
+            {
+                prénoms: "Hulk",
+                noms: "Hogan",
+                date_naissance: "11/08/1953",
+                taille: 201,
+                poids: 137,
+                nationalité: "Américain",
+                description: "Hulk Hogan a incarné l'ère de la Hulkamania dans les années 80. Son charisme et ses rivalités légendaires ont fait de lui une des plus grandes stars de l'histoire du catch."
+            },
+            {
+                prénoms: "CM",
+                noms: "Punk",
+                date_naissance: "26/09/1978",
+                taille: 186,
+                poids: 99,
+                nationalité: "Américain",
+                description: "CM Punk, de son vrai nom Phillip Jack Brooks, est un catcheur professionnel américain, également connu pour sa carrière dans le MMA et ses apparitions en tant qu'acteur. Il est surtout célèbre pour son passage à la WWE, où il a remporté plusieurs titres, dont le championnat de la WWE. CM Punk est reconnu pour ses compétences au micro et son style de lutte technique, ainsi que pour son attitude rebelle et ses discours francs. Après avoir quitté la WWE en 2014, il a tenté une carrière en MMA avec l'UFC, avant de revenir dans le catch en 2021 avec All Elite Wrestling (AEW)"
+            },
+            {
+                prénoms: "Bryan",
+                noms: "Danielson",
+                date_naissance: "22/05/1981",
+                taille: 178,
+                poids: 95,
+                nationalité: "Américain",
+                description: "Bryan Danielson, également connu sous le nom de Daniel Bryan à la WWE, est un catcheur reconnu pour son incroyable technique et son esprit de compétition. Il a marqué l'histoire du catch avec son mouvement 'Yes!', une carrière jalonnée de titres prestigieux et une réputation de combattant acharné, aussi bien dans les promotions indépendantes que sur les grandes scènes comme la WWE et AEW."
+            },
+            {
+                prénoms: "Becky",
+                noms: "Lynch",
+                date_naissance: "30/01/1987",
+                taille: 168,
+                poids: 61,
+                nationalité: "Irlandaise",
+                description: "Becky Lynch, de son vrai nom Rebecca Quin, est une catcheuse irlandaise qui a marqué l'histoire de la WWE en devenant l'une des plus grandes superstars féminines. Surnommée 'The Man', elle s'est distinguée par son charisme, sa détermination et sa capacité à captiver le public. Son règne en tant que championne a été l'un des plus marquants, et elle continue à laisser une empreinte indélébile dans le monde du catch."
+            }
+
+        ];
+
+        const container = document.getElementById('superstars-container');
+
+        superstars.forEach(superstar => {
+            // Création du bloc superstar
+            const superstarDiv = document.createElement('div');
+            superstarDiv.className = 'superstar';
+
+            // Ajout de l'image fictive
+            const img = document.createElement('img');
+            img.src = `${superstar.prénoms.toLowerCase()}_${superstar.noms.toLowerCase()}.png`;
+            img.alt = `${superstar.prénoms} ${superstar.noms}`;
+
+            // Bouton pour afficher/masquer la description
+            const button = document.createElement('button');
+            button.textContent = '↓';
+            button.onclick = () => toggleDescription(`desc-${superstar.prénoms.toLowerCase()}-${superstar.noms.toLowerCase()}`);
+
+            // Description de la superstar
+            const description = document.createElement('p');
+            description.id = `desc-${superstar.prénoms.toLowerCase()}-${superstar.noms.toLowerCase()}`;
+            description.className = 'description';
+            description.style.display = 'none';
+            description.innerHTML = `
+                <strong>Nom :</strong> ${superstar.prénoms} ${superstar.noms}<br>
+                <strong>Date de naissance :</strong> ${superstar.date_naissance}<br>
+                <strong>Taille :</strong> ${superstar.taille} cm<br>
+                <strong>Poids :</strong> ${superstar.poids} kg<br>
+                <strong>Nationalité :</strong> ${superstar.nationalité}<br>
+                <strong>Description :</strong> ${superstar.description}
+            `;
+
+            // Ajout au conteneur
+            superstarDiv.appendChild(img);
+            superstarDiv.appendChild(button);
+            superstarDiv.appendChild(description);
+            container.appendChild(superstarDiv);
+        });
+
+        function toggleDescription(id) {
+            const element = document.getElementById(id);
+            element.style.display = (element.style.display === 'none') ? 'block' : 'none';
+        }
+    </script>
+
+    <p>,les superstars de catch ont joué un rôle essentiel dans l'évolution et la popularité de ce sport spectaculaire à
+        travers les décennies. Leurs performances sur le ring, leurs rivalités épiques et leur impact sur la culture
+        populaire ont contribué à façonner l'histoire du catch et à captiver les fans du monde entier. Que ce soit dans
+        le cadre du kayfabe ou en dehors, ces superstars ont transcendé les frontières du divertissement sportif pour
+        devenir de véritables icônes, dont l'influence perdure bien au-delà des limites du ring.
+        Des légendes telles que Hulk Hogan, "Stone Cold" Steve Austin et The Rock ont pavé la voie pour une génération
+        de catcheurs, tout en inspirant des millions de fans à travers le monde. Leurs rivalités mémorables et leurs
+        moments emblématiques resteront à jamais gravés dans l'histoire du catch, témoignant de l'impact durable de leur
+        talent et de leur dévouement.
+        Au fil des décennies, de nouvelles stars ont émergé, apportant leur propre style et leur propre flair au monde
+        du catch. Des figures emblématiques comme The Undertaker, Ric Flair, CM Punk et Daniel Bryan ont continué à
+        captiver les foules avec leurs performances remarquables et leurs histoires fascinantes.
+        En fin de compte, les superstars de catch continuent d'incarner l'esprit de la compétition, de l'adrénaline et
+        du divertissement pur. Leur héritage perdurera, inspirant les générations futures de lutteurs et de fans à
+        poursuivre la tradition du catch et à repousser les limites de ce sport extraordinaire</p>
+</body>
+<footer>
+    <p>Copyright © WrestlingDream</p>
+    <div class="socials">
+        <a href="https://www.instagram.com/wrestlingdream2025/"><img src="instagram.png" alt="Instagram"></a>
+        <a href="https://www.facebook.com"><img src="facebook.png" alt="Facebook"></a>
+    </div>
+</footer>
+
+</html>
